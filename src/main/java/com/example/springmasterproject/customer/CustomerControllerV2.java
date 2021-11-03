@@ -2,31 +2,26 @@ package com.example.springmasterproject.customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.w3c.dom.stylesheets.LinkStyle;
-
-import javax.validation.Valid;
-import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/v1/customers")
-public class CustomerController {
+@RequestMapping(path = "/api/v2/customers")
+public class CustomerControllerV2 {
 
     private final CustomerService customerService;
 
     @Autowired
-    public CustomerController(CustomerService customerService) {
+    public CustomerControllerV2(CustomerService customerService) {
         this.customerService = customerService;
     }
 
     @GetMapping
     public Iterable<Customer> findAll(){
-        Iterable<Customer> customers = customerService.findAllCustomers();
-        customers.forEach(System.out::println);
-        return customers;
+        System.out.println("v2 controller");
+        return customerService.findAllCustomers();
     }
 
     @PostMapping
-    public void create(@RequestBody @Valid Customer customer){
+    public void create(@RequestBody Customer customer){
         System.out.println("POST REQUEST");
     }
 

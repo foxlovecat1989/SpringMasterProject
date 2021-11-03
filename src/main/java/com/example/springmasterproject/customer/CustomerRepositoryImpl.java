@@ -9,7 +9,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     public Iterable<Customer> findAll() {
         // TODO - connect to a real db
         return List.of(
-                new Customer(1L, "get data from real db")
+                new Customer(1L, "get data from real db", "password", "ed@gmail..com")
         );
     }
 }

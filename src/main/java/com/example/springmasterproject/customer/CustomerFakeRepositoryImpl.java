@@ -1,6 +1,5 @@
 package com.example.springmasterproject.customer;
 
-import org.springframework.stereotype.Repository;
 import java.util.List;
 
 // @Repository(value = "fake")
@@ -9,10 +8,10 @@ public class CustomerFakeRepositoryImpl implements CustomerRepository {
     public Iterable<Customer> findAll() {
 
         return List.of(
-                new Customer(1L, "Fruite"),
-                new Customer(2L, "Apple"),
-                new Customer(3L, "Key"),
-                new Customer(4L, "Elle")
+                new Customer(1L, "Fruite", "password", "ed@gmail..com"),
+                new Customer(2L, "Apple", "password", "ed@gmail..com"),
+                new Customer(3L, "Key", "password", "ed@gmail..com"),
+                new Customer(4L, "Elle", "password", "ed@gmail..com")
         );
     }
 }
