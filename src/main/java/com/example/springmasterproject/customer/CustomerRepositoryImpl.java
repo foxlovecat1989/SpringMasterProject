@@ -12,4 +12,9 @@ public class CustomerRepositoryImpl implements CustomerRepository {
                 new Customer(1L, "get data from real db", "password", "ed@gmail..com")
         );
     }
+
+    @Override
+    public Customer findOneById(Long id) {
+        return new Customer(1L, "get data from real db", "password", "ed@gmail..com");
+    }
 }

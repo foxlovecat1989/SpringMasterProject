@@ -17,4 +17,9 @@ public class CustomerServiceImpl implements CustomerService{
     public Iterable<Customer> findAllCustomers() {
         return customerRepository.findAll();
     }
+
+    @Override
+    public Customer findOneById(Long id) {
+        return customerRepository.findOneById(id);
+    }
 }

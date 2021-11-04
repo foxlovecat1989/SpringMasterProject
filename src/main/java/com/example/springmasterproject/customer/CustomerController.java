@@ -1,5 +1,6 @@
 package com.example.springmasterproject.customer;
 
+import com.example.springmasterproject.exception.ApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.w3c.dom.stylesheets.LinkStyle;
@@ -23,6 +24,17 @@ public class CustomerController {
         Iterable<Customer> customers = customerService.findAllCustomers();
         customers.forEach(System.out::println);
         return customers;
+    }
+
+    @GetMapping(path = "/{id}")
+    public Customer findOneById(@PathVariable("id") Long id){
+        return customerService.findOneById(id);
+    }
+
+    @GetMapping(path = "/{id}/exception")
+    public Customer getCustomerException(@PathVariable("id") Long id){
+
+        throw new ApiRequestException("ApiRequestException for Customer" + id);
     }
 
     @PostMapping

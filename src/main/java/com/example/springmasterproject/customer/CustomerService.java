@@ -5,4 +5,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface CustomerService {
     Iterable<Customer> findAllCustomers();
+    Customer findOneById(Long id);
 }
